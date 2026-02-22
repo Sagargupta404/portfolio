@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    output: "export",
-    basePath: "/PRO3",
-  assetPrefix: "/PRO3/",
-};
+const nextConfig = {};
 
 export default nextConfig;
