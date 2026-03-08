@@ -18,13 +18,13 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative w-full min-h-screen flex items-center bg-cover bg-center transition-all duration-1000"
+      className="relative w-full min-h-screen flex items-center pt-24 md:pt-0 bg-cover bg-center transition-all duration-1000"
       style={{ backgroundImage: `url(${backgrounds[currentBg]})` }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-red-900/40"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6 py-20 text-white">
+      <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6 py-16 md:py-20 text-white">
 
         {/* LEFT CONTENT */}
         <motion.div
@@ -38,7 +38,7 @@ export default function HeroSection() {
             HELLO, I'M
           </p>
 
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
             Sagar <span className="text-red-600">Gupta</span>
           </h1>
 
@@ -113,9 +113,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: 80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="flex justify-center md:justify-end mt-10 md:mt-0"
+          className="flex justify-center md:justify-end mt-10 md:mt-0 order-last md:order-none"
         >
-          <div className="relative w-48 h-48 sm:w-60 sm:h-60 md:w-80 md:h-80">
+          <div className="relative w-44 h-44 sm:w-56 sm:h-56 md:w-80 md:h-80">
 
             <div className="absolute inset-0 rounded-full bg-red-600 blur-3xl opacity-20"></div>
 

@@ -9,7 +9,7 @@ const projects = [
       "A freelance management platform that helps freelancers organize projects, track tasks, and manage client workflows efficiently.",
     image: "/f1.png",
     tech: ["Next.js", "Node.js", "MongoDB", "TailwindCSS"],
-    github: "#",
+    github: "https://github.com/Sagargupta404/FreelanceFlow",
     live: "https://freelance-flow-pg.vercel.app/",
   },
   {
@@ -18,7 +18,7 @@ const projects = [
       "A modern gym landing website built using React + Vite with smooth animations, routing, and responsive UI design.",
     image: "/g1.png",
     tech: ["React", "Vite", "React Router", "CSS Animations"],
-    github: "#",
+    github: "https://github.com/Sagargupta404/gym",
     live: "https://sagargupta404.github.io/gym/",
   },
   {
@@ -36,7 +36,7 @@ const projects = [
       "An interactive romantic website featuring countdown timers, memory galleries, and personalized storytelling built with modern web animations.",
     image: "/l1.png",
     tech: ["Next.js", "Framer Motion", "TailwindCSS"],
-    github: "#",
+    github: "https://github.com/Sagargupta404/LoveVerse",
     live: "https://love-verse-ten.vercel.app/",
   },
   {
