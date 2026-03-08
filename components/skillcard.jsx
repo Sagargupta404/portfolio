@@ -34,7 +34,7 @@ export default function SkillCards() {
             <div className="relative w-50 h-30 rounded-xl shadow-xl transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(50deg)]">
               
               {/* Front */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-950 rounded-xl border border-gray-700 [backface-visibility:hidden]">
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black rounded-xl border border-gray-700 [backface-visibility:hidden]">
                 {skill.icon}
                 <h3 className="mt-4 text-xl font-semibold text-white">{skill.title}</h3>
               </div>

@@ -1,106 +1,144 @@
 "use client";
+
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 const projects = [
   {
-    title: "Video Chat App",
+    title: "FreelanceFlow",
     description:
-      "A peer-to-peer video calling and chat application using Next.js and WebRTC.",
-    image: "/c2.jpg",
-    link: "https://github.com/yourusername/video-chat-app",
+      "A freelance management platform that helps freelancers organize projects, track tasks, and manage client workflows efficiently.",
+    image: "/f1.png",
+    tech: ["Next.js", "Node.js", "MongoDB", "TailwindCSS"],
+    github: "#",
+    live: "https://freelance-flow-pg.vercel.app/",
   },
   {
-    title: "Portfolio Website",
-    description: "Personal portfolio built with Next.js and Tailwind CSS.",
-    image: "/c1.jpg",
-    link: "https://yourportfolio.com",
+    title: "Gym Website",
+    description:
+      "A modern gym landing website built using React + Vite with smooth animations, routing, and responsive UI design.",
+    image: "/g1.png",
+    tech: ["React", "Vite", "React Router", "CSS Animations"],
+    github: "#",
+    live: "https://sagargupta404.github.io/gym/",
   },
   {
-    title: "To-Do App",
-    description: "Task management app with priority sorting and reminders.",
-    image: "/c3.jpg",
-    link: "https://github.com/yourusername/todo-app",
+    title: "CarWale Clone (In Progress)",
+    description:
+      "A car listing and comparison website inspired by CarWale. This project will include car browsing, filtering, and detailed vehicle pages.",
+    image: "/cw1.png",
+    tech: ["Next.js", "API Integration", "TailwindCSS"],
+    github: "#",
+    live: "#",
   },
   {
-    title: "To-Do App",
-    description: "Task management app with priority sorting and reminders.",
-    image: "/c3.jpg",
-    link: "https://github.com/yourusername/todo-app",
+    title: "LoveVerse",
+    description:
+      "An interactive romantic website featuring countdown timers, memory galleries, and personalized storytelling built with modern web animations.",
+    image: "/l1.png",
+    tech: ["Next.js", "Framer Motion", "TailwindCSS"],
+    github: "#",
+    live: "https://love-verse-ten.vercel.app/",
   },
   {
-    title: "To-Do App",
-    description: "Task management app with priority sorting and reminders.",
-    image: "/c3.jpg",
-    link: "https://github.com/yourusername/todo-app",
-  },
-  {
-    title: "To-Do App",
-    description: "Task management app with priority sorting and reminders.",
-    image: "/c3.jpg",
-    link: "https://github.com/yourusername/todo-app",
+    title: "Real-Time Chat App",
+    description:
+      "A real-time messaging application with active user tracking and instant message delivery using modern web technologies.",
+    image: "/ch1.png",
+    tech: ["Next.js", "Socket.io", "Node.js", "MongoDB"],
+    github: "#",
+    live: "#",
   },
 ];
 
-// Background images for the section
-const backgrounds = ["/c1.jpg", "/c2.jpg", "/c3.jpg","/c4.jpg"]; // place in /public
-
 export default function Projects() {
-  const [currentBg, setCurrentBg] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentBg((prev) => (prev + 1) % backgrounds.length);
-    }, 5000); // change every 5 seconds
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section
-      className="relative py-10 px-10 bg-cover bg-center transition-all duration-700 ease-in-out"
-      style={{ backgroundImage: `url(${backgrounds[currentBg]})` }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/70"></div>
+    <section className="bg-gradient-to-b from-black to-gray-900 py-20 px-6">
 
-      <div className="relative z-10 max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12 transform transition-transform duration-900 hover:scale-130">
-  My <span className="text-red-600">Projects</span>
-</h2>
+      <div className="max-w-6xl mx-auto">
 
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-white">
+            My <span className="text-red-500">Projects</span>
+          </h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+          <p className="text-gray-400 text-sm mt-3">
+            Projects showcasing my skills in full-stack development and modern web technologies.
+          </p>
+        </div>
+
+        {/* Grid */}
+        <div className="grid md:grid-cols-3 gap-10">
+
           {projects.map((project, index) => (
-            <a
+            <div
               key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative block rounded-xl overflow-hidden shadow-lg"
+              className="group relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-red-500 transition transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-red-500/20 duration-300"
             >
-              {/* Project Image */}
-              <div className="relative w-full h-50">
+
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover group-hover:scale-110 transition duration-500"
                 />
               </div>
 
-              {/* Overlay on Hover */}
-              <div className="absolute inset-0 bg-black flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <h3 className="text-xl font-bold text-blue-400 mb-2">
+              {/* Content */}
+              <div className="p-5">
+
+                <h3 className="text-lg font-semibold text-white">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 text-sm text-center px-4">
+
+                <p className="text-gray-400 text-sm mt-2">
                   {project.description}
                 </p>
+
+                {/* Tech stack */}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-xs bg-red-600/20 text-red-400 px-2 py-1 rounded"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Buttons */}
+                <div className="flex gap-3 mt-5">
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    className="text-sm px-3 py-1.5 border border-white/20 rounded hover:border-red-500 transition"
+                  >
+                    GitHub
+                  </a>
+
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    className="text-sm px-3 py-1.5 bg-red-600 rounded hover:bg-red-700 transition"
+                  >
+                    Live
+                  </a>
+
+                </div>
+
               </div>
-            </a>
+
+            </div>
           ))}
+
         </div>
+
       </div>
+
     </section>
   );
 }
